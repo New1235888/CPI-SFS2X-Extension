@@ -55,7 +55,7 @@ public class CPIJoinZoneListener extends BaseServerEventHandler implements ISFSE
         SFSObject outfitData = (SFSObject) playerRoomData.getClass("outfit");
         SFSObject profile = (SFSObject) playerRoomData.getClass("profile");
         
-        SFSUserVariable outfit = SFSUserVariable.newFromStringLiteral("outfit", "string", ((SFSObject) outfitData.getClass("parts")).toJson());
+        SFSUserVariable outfit = SFSUserVariable.newFromStringLiteral("outfit", "string", ((SFSArrayLite) outfitData.getClass("parts")).toJson());
         SFSUserVariable colour = SFSUserVariable.newFromStringLiteral("colour", "int", profile.getClass("colour").toString());
         SFSUserVariable tube = SFSUserVariable.newFromStringLiteral("tube", "int", "0");
         SFSUserVariable sess = SFSUserVariable.newFromStringLiteral("sess", "string", player.getClass("sessionId").toString());
